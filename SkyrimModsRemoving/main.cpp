@@ -102,7 +102,12 @@ void removeAllMods(QString pathToGame)
 			if (!isFilePlayable(file.fileName())) {
 
 				cout << file.absoluteFilePath().toUtf8().constData() << endl;
-				QFile::remove(file.absoluteFilePath());
+				
+				QFile qFile(file.absoluteFilePath());
+				qFile.open(QIODevice::ReadWrite);
+				qFile.setPermissions(QFile::ReadOther | QFile::WriteOther);
+				qFile.remove();
+				qFile.close();
 			}
 		}
 	}
