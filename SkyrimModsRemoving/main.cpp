@@ -40,6 +40,7 @@ int main()
 		removeAllModsFolders(pathToGame + "\\" + "Data" + "\\" + "Interface");
 		removeAllModsFolders(pathToGame + "\\" + "Data" + "\\" + "Video");
 		removeAllModsFolders(pathToGame + "\\" + "Data" + "\\" + "Strings");
+		removeAllModsFolders(pathToGame);
 	}
 
 	system("cls");
